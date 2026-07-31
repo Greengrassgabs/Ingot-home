@@ -1,0 +1,1189 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+
+    background:linear-gradient(
+        to bottom,
+        #76d7ff,
+        #2d9cdb,
+        #145da0,
+        #083358
+    );
+
+    height:100vh;
+}
+
+#aquarium{
+
+    width:100vw;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+
+}
+
+#ingot{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:180px;
+    height:auto;
+
+    transform:translate(-50%,-50%);
+
+    animation:bob 4s ease-in-out infinite;
+
+}
+
+@keyframes bob{
+
+0%{transform:translate(-50%,-50%)}
+
+50%{transform:translate(-50%,-54%)}
+
+100%{transform:translate(-50%,-50%)}
+
+}
+
+.bubble{
+
+    position:absolute;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.5);
+
+    animation:float linear forwards;
+
+}
+
+@keyframes float{
+
+from{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+.fish{
+
+position:absolute;
+
+font-size:45px;
+
+animation:swim linear infinite;
+
+}
+
+@keyframes swim{
+
+from{
+
+left:-80px;
+
+}
+
+to{
+
+left:110vw;
+
+}
+
+}
+#seaweed-area {
+
+    position: absolute;
+
+    left: 5%;
+    bottom: 0;
+
+    width: 180px;
+    height: 220px;
+
+}
+
+#seaweed {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 180px;
+    height: auto;
+
+    transform-origin: bottom center;
+
+    animation: sway 3s ease-in-out infinite;
+
+    cursor: pointer;
+
+    z-index: 2;
+
+}
+@keyframes sway{
+
+    0%{
+        transform:rotate(-3deg);
+    }
+
+    50%{
+        transform:rotate(3deg);
+    }
+
+    100%{
+        transform:rotate(-3deg);
+    }
+
+
+}
+#chickenpox {
+
+    position: absolute;
+
+    left: 45px;
+    bottom: 15px;
+
+    width: 100px;
+    height: auto;
+
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.7s ease;
+
+    z-index: 1;
+
+}
+#starfish-area {
+
+    position: absolute;
+
+    right: 10%;
+    bottom: 8%;
+
+    width: 110px;
+
+}
+
+#starfish {
+
+    width: 110px;
+    height: auto;
+
+    display: block;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+
+}
+#starfish:hover {
+
+    transform: scale(1.12) rotate(5deg);
+
+}
+#crab-area {
+
+    position: absolute;
+
+    left: 28%;
+    bottom: 5%;
+
+    width: 130px;
+
+    transition: left 1s ease;
+
+}
+
+#crab {
+
+    width: 130px;
+    height: auto;
+
+    display: block;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+
+}
+#crab:hover {
+
+    transform: rotate(-5deg) scale(1.08);
+
+}
+#speech-bubble {
+
+    position: absolute;
+
+    left: 50%;
+    top: 18%;
+
+    transform: translateX(-50%);
+
+    width: 300px;
+
+    padding: 18px 22px;
+
+    background: #ffffff;
+
+    border: 4px solid #145da0;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    color: #083358;
+
+    box-shadow: 0 7px 0 rgba(8, 51, 88, 0.18);
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+
+    pointer-events: none;
+
+}
+#speech-bubble::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -22px;
+
+    transform: translateX(-50%);
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 18px solid transparent;
+
+    border-right: 18px solid transparent;
+
+    border-top: 24px solid #145da0;
+
+}
+#speech-bubble::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -16px;
+
+    transform: translateX(-50%);
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 13px solid transparent;
+
+    border-right: 13px solid transparent;
+
+    border-top: 18px solid #ffffff;
+
+    z-index: 1;
+
+}
+#speech-bubble.show {
+
+    opacity: 1;
+
+}
+#starfish-bubble {
+
+    position: absolute;
+
+    bottom: 125px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 220px;
+
+    padding: 14px 18px;
+
+    background: white;
+
+    border: 4px solid #e66b4f;
+
+    border-radius: 25px;
+
+    color: #083358;
+
+    font-size: 17px;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+
+}
+#starfish-bubble::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -20px;
+
+    transform: translateX(-50%);
+
+    border-left: 15px solid transparent;
+
+    border-right: 15px solid transparent;
+
+    border-top: 20px solid #e66b4f;
+
+}
+#starfish-bubble::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -14px;
+
+    transform: translateX(-50%);
+
+    border-left: 11px solid transparent;
+
+    border-right: 11px solid transparent;
+
+    border-top: 15px solid white;
+
+    z-index: 1;
+
+}
+#starfish-bubble.show {
+
+    opacity: 1;
+
+}
+#crab-area.scuttle {
+
+    left: 45%;
+
+}
+#crab-bubble {
+
+    position: absolute;
+
+    bottom: 140px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 240px;
+
+    padding: 14px 18px;
+
+    background: white;
+
+    border: 4px solid #d94b4b;
+
+    border-radius: 25px;
+
+    color: #083358;
+
+    font-size: 17px;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    line-height: 1.4;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+
+}
+#crab-bubble.show {
+
+    opacity: 1;
+
+}
+#crab-bubble::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -20px;
+
+    transform: translateX(-50%);
+
+    border-left: 15px solid transparent;
+
+    border-right: 15px solid transparent;
+
+    border-top: 20px solid #d94b4b;
+
+}
+#crab-bubble::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -14px;
+
+    transform: translateX(-50%);
+
+    border-left: 11px solid transparent;
+
+    border-right: 11px solid transparent;
+
+    border-top: 15px solid white;
+
+    z-index: 1;
+
+}
+#chickenpox.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+#seaweed.shake {
+
+    animation: seaweedShake 0.6s ease-in-out;
+
+}
+@keyframes seaweedShake {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-10deg);
+    }
+
+    40% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(-8deg);
+    }
+
+    80% {
+        transform: rotate(8deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+#bottle {
+
+    position: absolute;
+
+    right: 18%;
+    top: -150px;
+
+    width: 90px;
+    height: auto;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transition:
+        top 1.5s ease,
+        opacity 0.8s ease,
+        transform 0.25s ease;
+
+}
+#bottle.appear {
+
+    top: 8%;
+
+    opacity: 1;
+
+}
+#bottle:hover {
+
+    transform: rotate(6deg) scale(1.1);
+
+}
+#memory-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 25, 60, 0.35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0s linear 0.8s;
+
+    z-index: 20;
+
+}
+#memory-overlay.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transition: opacity 0.8s ease;
+
+}
+#memory1 {
+
+    max-width: 75vw;
+
+    max-height: 70vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border: 8px solid white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+
+    transform: scale(0.92);
+
+    transition: transform 0.8s ease;
+
+}
+#memory-overlay.show #memory1 {
+
+    transform: scale(1);
+
+}
+/* TURTLE AREA */
+
+#turtle-area {
+
+    position: absolute;
+
+    right: -200px;
+
+    top: 35%;
+
+    width: 150px;
+
+    opacity: 0;
+
+    transition:
+        right 1.5s ease,
+        opacity 0.8s ease;
+
+}
+
+
+/* TURTLE APPEARS */
+
+#turtle-area.appear {
+
+    right: 8%;
+
+    opacity: 1;
+
+}
+
+
+/* TURTLE IMAGE */
+
+#turtle {
+
+    width: 150px;
+
+    height: auto;
+
+    display: block;
+
+    cursor: pointer;
+
+    animation: turtleFloat 3s ease-in-out infinite;
+
+}
+
+
+/* TURTLE FLOATING */
+
+@keyframes turtleFloat {
+
+    0% {
+
+        transform: translateY(0) rotate(-2deg);
+
+    }
+
+    50% {
+
+        transform: translateY(-12px) rotate(2deg);
+
+    }
+
+    100% {
+
+        transform: translateY(0) rotate(-2deg);
+
+    }
+
+}
+
+
+/* TURTLE SPEECH BUBBLE */
+
+#turtle-bubble {
+
+    position: absolute;
+
+    bottom: 155px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 180px;
+
+    padding: 13px 18px;
+
+    background: white;
+
+    border: 4px solid #4c9b72;
+
+    border-radius: 25px;
+
+    color: #083358;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    pointer-events: none;
+
+}
+
+
+/* SPEECH BUBBLE TAIL */
+
+#turtle-bubble::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -20px;
+
+    transform: translateX(-50%);
+
+    border-left: 15px solid transparent;
+
+    border-right: 15px solid transparent;
+
+    border-top: 20px solid #4c9b72;
+
+}
+
+
+#turtle-bubble::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -14px;
+
+    transform: translateX(-50%);
+
+    border-left: 11px solid transparent;
+
+    border-right: 11px solid transparent;
+
+    border-top: 15px solid white;
+
+    z-index: 1;
+
+}
+
+
+/* MEMORY 2 OVERLAY */
+
+#memory2-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(0, 25, 60, 0.35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0s linear 0.8s;
+
+    z-index: 20;
+
+}
+
+
+/* SHOW MEMORY 2 */
+
+#memory2-overlay.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transition: opacity 0.8s ease;
+
+}
+
+
+/* MEMORY 2 PHOTO */
+
+#memory2 {
+
+    max-width: 75vw;
+
+    max-height: 70vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border: 8px solid white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+
+    transform: scale(0.92);
+
+    transition: transform 0.8s ease;
+
+}
+
+
+/* MEMORY 2 PHOTO ZOOMS IN */
+
+#memory2-overlay.show #memory2 {
+
+    transform: scale(1);
+
+}
+/* PARROTFISH AREA */
+
+#parrotfish-area {
+
+    position: absolute;
+
+    right: -250px;
+
+    top: 48%;
+
+    width: 160px;
+
+    opacity: 0;
+
+    transition:
+        right 2s ease,
+        opacity 0.7s ease;
+
+    z-index: 5;
+
+}
+
+
+/* PARROTFISH SWIMS IN */
+
+#parrotfish-area.appear {
+
+    right: 22%;
+
+    opacity: 1;
+
+}
+
+
+/* PARROTFISH IMAGE */
+
+#parrotfish {
+
+    width: 160px;
+
+    height: auto;
+
+    display: block;
+
+    animation: parrotfishFloat 3s ease-in-out infinite;
+
+}
+
+
+/* PARROTFISH FLOATING */
+
+@keyframes parrotfishFloat {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* PARROTFISH SPEECH BUBBLE */
+
+#parrotfish-bubble {
+
+    position: absolute;
+
+    bottom: 160px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 240px;
+
+    padding: 14px 18px;
+
+    background: white;
+
+    border: 4px solid #f08a4b;
+
+    border-radius: 25px;
+
+    color: #083358;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    line-height: 1.4;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.4s ease;
+
+}
+
+
+#parrotfish-bubble.show {
+
+    opacity: 1;
+
+}
+
+
+/* PARROTFISH BUBBLE TAIL */
+
+#parrotfish-bubble::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -20px;
+
+    transform: translateX(-50%);
+
+    border-left: 15px solid transparent;
+
+    border-right: 15px solid transparent;
+
+    border-top: 20px solid #f08a4b;
+
+}
+
+
+#parrotfish-bubble::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -14px;
+
+    transform: translateX(-50%);
+
+    border-left: 11px solid transparent;
+
+    border-right: 11px solid transparent;
+
+    border-top: 15px solid white;
+
+    z-index: 1;
+
+}
+
+
+/* TREASURE CHEST */
+
+#treasure-chest {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: -250px;
+
+    width: 150px;
+
+    height: auto;
+
+    transform: translateX(-50%);
+
+    opacity: 0;
+
+    cursor: pointer;
+
+    transition:
+        top 2s ease,
+        opacity 0.5s ease;
+
+    z-index: 10;
+
+}
+
+
+/* TREASURE CHEST FALLS DOWN */
+
+#treasure-chest.appear {
+
+    top: 68%;
+
+    opacity: 1;
+
+}
+/* FINAL LETTER OVERLAY */
+
+#letter-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(0, 25, 60, 0.55);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0s linear 0.8s;
+
+    z-index: 30;
+
+}
+
+
+/* SHOW THE LETTER */
+
+#letter-overlay.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transition: opacity 0.8s ease;
+
+}
+
+
+/* THE LETTER */
+
+#letter {
+
+    width: min(650px, 80vw);
+
+    max-height: 75vh;
+
+    overflow-y: auto;
+
+    padding: 45px;
+
+    background: #fff8dc;
+
+    border: 8px solid #d6b46a;
+
+    border-radius: 18px;
+
+    color: #4b3823;
+
+    text-align: center;
+
+    line-height: 1.7;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5);
+
+    transform: scale(0.85);
+
+    transition: transform 0.8s ease;
+
+}
+
+
+/* LETTER OPENS */
+
+#letter-overlay.show #letter {
+
+    transform: scale(1);
+
+}
+
+
+/* LETTER TITLE */
+
+#letter h1 {
+
+    margin-bottom: 25px;
+
+    font-size: 32px;
+
+}
+
+
+/* LETTER PARAGRAPHS */
+
+#letter p {
+
+    margin-bottom: 20px;
+
+    font-size: 18px;
+
+}
