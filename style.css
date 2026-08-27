@@ -1187,3 +1187,170 @@ left:110vw;
     font-size: 18px;
 
 }
+/* =========================
+   MOBILE VERSION
+   ========================= */
+
+@media (max-width: 600px) {
+
+    /* Keep aquarium filling the phone */
+    #aquarium {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* INGOT */
+    #ingot {
+        width: 130px;
+        top: 45%;
+    }
+
+
+    /* SPEECH BUBBLE */
+    #speech-bubble {
+        width: 250px;
+        max-width: 85vw;
+        padding: 14px 16px;
+        font-size: 17px;
+        top: 12%;
+    }
+
+
+    /* SEAWEED */
+    #seaweed-area {
+        left: 2%;
+        width: 120px;
+        height: 160px;
+    }
+
+    #seaweed {
+        width: 120px;
+    }
+
+    #chickenpox {
+        left: 30px;
+        bottom: 10px;
+        width: 75px;
+    }
+
+
+    /* STARFISH */
+    #starfish-area {
+        right: 3%;
+        bottom: 6%;
+        width: 80px;
+    }
+
+    #starfish {
+        width: 80px;
+    }
+
+    #starfish-bubble {
+        width: 180px;
+        font-size: 15px;
+        padding: 12px 14px;
+        bottom: 95px;
+    }
+
+
+    /* CRAB */
+    #crab-area {
+        left: 24%;
+        bottom: 4%;
+        width: 95px;
+    }
+
+    #crab {
+        width: 95px;
+    }
+
+    #crab-bubble {
+        width: 200px;
+        font-size: 15px;
+        padding: 12px 14px;
+        bottom: 105px;
+    }
+
+    #crab-area.scuttle {
+        left: 42%;
+    }
+
+
+    /* MEMORY BOTTLE */
+    #bottle {
+        width: 65px;
+        right: 8%;
+    }
+
+    #bottle.appear {
+        top: 6%;
+    }
+
+
+    /* MEMORY PHOTOS */
+    #memory1,
+    #memory2 {
+        max-width: 88vw;
+        max-height: 65vh;
+        border-width: 5px;
+        border-radius: 12px;
+    }
+
+
+    /* TURTLE */
+    #turtle-area {
+        width: 110px;
+        right: -150px;
+        top: 32%;
+    }
+
+    #turtle-area.appear {
+        right: 4%;
+    }
+
+    #turtle {
+        width: 110px;
+    }
+
+    #turtle-bubble {
+        width: 150px;
+        font-size: 15px;
+        padding: 11px 14px;
+        bottom: 115px;
+    }
+
+
+    /* PARROTFISH */
+    #parrotfish-area {
+        width: 110px;
+        right: -180px;
+        top: 43%;
+    }
+
+    #parrotfish-area.appear {
+        right: 8%;
+    }
+
+    #parrotfish {
+        width: 110px;
+    }
+
+    #parrotfish-bubble {
+        width: 190px;
+        font-size: 15px;
+        padding: 11px 14px;
+        bottom: 115px;
+    }
+
+
+    /* TREASURE CHEST */
+    #treasure-chest {
+        width: 110px;
+    }
+
+    #treasure-chest.appear {
+        top: 70%;
+    }
+
+}
